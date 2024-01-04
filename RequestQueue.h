@@ -1,8 +1,20 @@
 #pragma once
 
+#include "Request.h"
+#include <queue>
+#include <string>
+using std::queue, std::string;
+
 class RequestQueue {
 private:
-    // TODO
+    queue<Request*> q;
+
 public:
-    // TODO
+    RequestQueue();
+    ~RequestQueue();
+    
+    size_t size();
+    void push(Request* req);
+    Request* pop();
+    Request* front();
 };
