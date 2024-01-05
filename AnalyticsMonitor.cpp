@@ -1,3 +1,8 @@
+/** @file AnalyticsMonitor.cpp
+* @brief Implements the AnalyticsMonitor class.
+* @author Krish Chhabra
+*/
+
 #include "AnalyticsMonitor.h"
 
 AnalyticsMonitor::AnalyticsMonitor() : filename("Analytics.csv"), out("Analytics.csv") {

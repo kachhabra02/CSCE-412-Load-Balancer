@@ -1,0 +1,89 @@
+\hypertarget{Simulator_8cpp}{}\doxysection{Simulator.\+cpp File Reference}
+\label{Simulator_8cpp}\index{Simulator.cpp@{Simulator.cpp}}
+
+
+Driver for load balancer simulation.  
+
+
+{\ttfamily \#include \char`\"{}Load\+Balancer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Request\+Generator.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for Simulator.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_ab702106cf3b3e96750b6845ded4e0299}\label{Simulator_8cpp_ab702106cf3b3e96750b6845ded4e0299}} 
+\#define {\bfseries R\+E\+S\+ET}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_a8d23feea868a983c8c2b661e1e16972f}\label{Simulator_8cpp_a8d23feea868a983c8c2b661e1e16972f}} 
+\#define {\bfseries R\+ED}~\char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_acfbc006ea433ad708fdee3e82996e721}\label{Simulator_8cpp_acfbc006ea433ad708fdee3e82996e721}} 
+\#define {\bfseries G\+R\+E\+EN}~\char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_abf681265909adf3d3e8116c93c0ba179}\label{Simulator_8cpp_abf681265909adf3d3e8116c93c0ba179}} 
+\#define {\bfseries Y\+E\+L\+L\+OW}~\char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{}
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_a79d10e672abb49ad63eeaa8aaef57c38}\label{Simulator_8cpp_a79d10e672abb49ad63eeaa8aaef57c38}} 
+\#define {\bfseries B\+L\+UE}~\char`\"{}\textbackslash{}033\mbox{[}34m\char`\"{}
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_a6f699060902f800f12aaae150f3a708e}\label{Simulator_8cpp_a6f699060902f800f12aaae150f3a708e}} 
+\#define {\bfseries M\+A\+G\+E\+N\+TA}~\char`\"{}\textbackslash{}033\mbox{[}35m\char`\"{}
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_ad243f93c16bc4c1d3e0a13b84421d760}\label{Simulator_8cpp_ad243f93c16bc4c1d3e0a13b84421d760}} 
+\#define {\bfseries C\+Y\+AN}~\char`\"{}\textbackslash{}033\mbox{[}36m\char`\"{}
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_aad6e5c38c7a1a94c5298e184ead72fdd}\label{Simulator_8cpp_aad6e5c38c7a1a94c5298e184ead72fdd}} 
+\#define {\bfseries P\+R\+O\+B\+\_\+\+F\+A\+ST}~2
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_aa6879fcba8154a15368add7b99f6d425}\label{Simulator_8cpp_aa6879fcba8154a15368add7b99f6d425}} 
+\#define {\bfseries P\+R\+O\+B\+\_\+\+M\+O\+D\+E\+R\+A\+TE}~4
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_a4db50f009dff2d13c2fe4469113a6b2e}\label{Simulator_8cpp_a4db50f009dff2d13c2fe4469113a6b2e}} 
+\#define {\bfseries P\+R\+O\+B\+\_\+\+S\+L\+OW}~7
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_ab207612881788414702b4714c144d9fd}\label{Simulator_8cpp_ab207612881788414702b4714c144d9fd}} 
+\#define {\bfseries P\+R\+O\+B\+\_\+\+V\+\_\+\+S\+L\+OW}~12
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_ad8c8c87b5234c4523eca79c5ad1db3c5}\label{Simulator_8cpp_ad8c8c87b5234c4523eca79c5ad1db3c5}} 
+\#define {\bfseries T\+I\+M\+E\+\_\+\+M\+I\+N\+\_\+\+S\+H\+O\+RT}~2
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_aae3d46f532a3872e760a559999ebde4d}\label{Simulator_8cpp_aae3d46f532a3872e760a559999ebde4d}} 
+\#define {\bfseries T\+I\+M\+E\+\_\+\+M\+A\+X\+\_\+\+S\+H\+O\+RT}~40
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_aaacdf3563d3af41a059c81ec05b94b8e}\label{Simulator_8cpp_aaacdf3563d3af41a059c81ec05b94b8e}} 
+\#define {\bfseries T\+I\+M\+E\+\_\+\+M\+I\+N\+\_\+\+M\+ED}~4
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_a8cca189fb79159ec7b6460feb23653af}\label{Simulator_8cpp_a8cca189fb79159ec7b6460feb23653af}} 
+\#define {\bfseries T\+I\+M\+E\+\_\+\+M\+A\+X\+\_\+\+M\+ED}~100
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_ad6338e7222595f8d183a0d021886f7a5}\label{Simulator_8cpp_ad6338e7222595f8d183a0d021886f7a5}} 
+\#define {\bfseries T\+I\+M\+E\+\_\+\+M\+I\+N\+\_\+\+L\+O\+NG}~20
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_acfcd59a29819e816e56263015ac52150}\label{Simulator_8cpp_acfcd59a29819e816e56263015ac52150}} 
+\#define {\bfseries T\+I\+M\+E\+\_\+\+M\+A\+X\+\_\+\+L\+O\+NG}~200
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_ad8a49c8aac9740e21ea104e1e6521758}\label{Simulator_8cpp_ad8a49c8aac9740e21ea104e1e6521758}} 
+\#define {\bfseries T\+I\+M\+E\+\_\+\+M\+I\+N\+\_\+\+V\+\_\+\+L\+O\+NG}~100
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_a6aa3d51b7edb1c6e03c16bbc19b12cde}\label{Simulator_8cpp_a6aa3d51b7edb1c6e03c16bbc19b12cde}} 
+\#define {\bfseries T\+I\+M\+E\+\_\+\+M\+A\+X\+\_\+\+V\+\_\+\+L\+O\+NG}~300
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_aeef960ed284eef6f25d882f5ac366ff7}\label{Simulator_8cpp_aeef960ed284eef6f25d882f5ac366ff7}} 
+\#define {\bfseries S\+T\+A\+R\+T\+\_\+\+R\+E\+Q\+\_\+\+F\+A\+C\+T\+OR}~20
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Simulator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Simulator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int \mbox{\hyperlink{Simulator_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Runs the simulation UI that generates a customized scenario to demonstrate the load balancer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver for load balancer simulation. 
+
+\begin{DoxyAuthor}{Author}
+Krish Chhabra 
+\end{DoxyAuthor}

@@ -1,0 +1,195 @@
+\hypertarget{classOutputLog}{}\doxysection{Output\+Log Class Reference}
+\label{classOutputLog}\index{OutputLog@{OutputLog}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOutputLog_aab56917f4f517e534db7f10c3f8c788a}{Output\+Log}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new, default Output Log. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOutputLog_add8d1c0f0d47d6e5e00ddf20131e1c35}{Output\+Log}} (string fname)
+\begin{DoxyCompactList}\small\item\em Construct a new Output Log that writes to the given file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOutputLog_a3d48e763d821a1852cd6a36cb9dbd5b1}{$\sim$\+Output\+Log}} ()
+\begin{DoxyCompactList}\small\item\em Closes the output log. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOutputLog_a53f89d5a61754159ad1fed8d9ba547e5}{request\+Received}} (size\+\_\+t clock, \mbox{\hyperlink{structRequest}{Request}} req)
+\begin{DoxyCompactList}\small\item\em Logs the details of the given new request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOutputLog_aeb267ff02f6431e98c545a52b8141804}{request\+Blocked}} (size\+\_\+t clock, \mbox{\hyperlink{structRequest}{Request}} req)
+\begin{DoxyCompactList}\small\item\em Logs the details of the given bloacked request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOutputLog_a021ce182474a624e8237117990679eb3}{request\+Delegated}} (size\+\_\+t clock, \mbox{\hyperlink{structRequest}{Request}} req, size\+\_\+t server\+Num)
+\begin{DoxyCompactList}\small\item\em Logs the details of the given request and the server that it was delegated to. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOutputLog_ab02dff373819bbd0ae61151c8faa1987}{request\+Completed}} (size\+\_\+t clock, \mbox{\hyperlink{structRequest}{Request}} req, size\+\_\+t server\+Num)
+\begin{DoxyCompactList}\small\item\em Logs the details of the completed request and the server that it was processed on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOutputLog_afecebb38746a4530330b7f4e6f3faa7a}{server\+Added}} (size\+\_\+t clock, size\+\_\+t server\+Num)
+\begin{DoxyCompactList}\small\item\em Logs the addition of a web server by the load balancer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOutputLog_a809a995ae0a1e63c1f982a9ee41f66d1}{server\+Removed}} (size\+\_\+t clock, size\+\_\+t server\+Num)
+\begin{DoxyCompactList}\small\item\em Logs the deletion of a web server by the load balancer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOutputLog_a8f36feb594f77ddfabf010e109009926}{exit\+Simulation}} (size\+\_\+t clock, bool exited\+Early)
+\begin{DoxyCompactList}\small\item\em Logs the ending of the simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOutputLog_aab56917f4f517e534db7f10c3f8c788a}\label{classOutputLog_aab56917f4f517e534db7f10c3f8c788a}} 
+\index{OutputLog@{OutputLog}!OutputLog@{OutputLog}}
+\index{OutputLog@{OutputLog}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{OutputLog()}{OutputLog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Output\+Log\+::\+Output\+Log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new, default Output Log. 
+
+\mbox{\Hypertarget{classOutputLog_add8d1c0f0d47d6e5e00ddf20131e1c35}\label{classOutputLog_add8d1c0f0d47d6e5e00ddf20131e1c35}} 
+\index{OutputLog@{OutputLog}!OutputLog@{OutputLog}}
+\index{OutputLog@{OutputLog}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{OutputLog()}{OutputLog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Output\+Log\+::\+Output\+Log (\begin{DoxyParamCaption}\item[{string}]{fname }\end{DoxyParamCaption})}
+
+
+
+Construct a new Output Log that writes to the given file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOutputLog_a3d48e763d821a1852cd6a36cb9dbd5b1}\label{classOutputLog_a3d48e763d821a1852cd6a36cb9dbd5b1}} 
+\index{OutputLog@{OutputLog}!````~OutputLog@{$\sim$OutputLog}}
+\index{````~OutputLog@{$\sim$OutputLog}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{$\sim$OutputLog()}{~OutputLog()}}
+{\footnotesize\ttfamily Output\+Log\+::$\sim$\+Output\+Log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the output log. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOutputLog_a8f36feb594f77ddfabf010e109009926}\label{classOutputLog_a8f36feb594f77ddfabf010e109009926}} 
+\index{OutputLog@{OutputLog}!exitSimulation@{exitSimulation}}
+\index{exitSimulation@{exitSimulation}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{exitSimulation()}{exitSimulation()}}
+{\footnotesize\ttfamily void Output\+Log\+::exit\+Simulation (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{clock,  }\item[{bool}]{exited\+Early }\end{DoxyParamCaption})}
+
+
+
+Logs the ending of the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & Current clock cycle. \\
+\hline
+{\em exited\+Early} & The status of if the simulation ended early due to no incoming requests (true) or reached the clock cyle limit (false). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOutputLog_aeb267ff02f6431e98c545a52b8141804}\label{classOutputLog_aeb267ff02f6431e98c545a52b8141804}} 
+\index{OutputLog@{OutputLog}!requestBlocked@{requestBlocked}}
+\index{requestBlocked@{requestBlocked}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{requestBlocked()}{requestBlocked()}}
+{\footnotesize\ttfamily void Output\+Log\+::request\+Blocked (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{clock,  }\item[{\mbox{\hyperlink{structRequest}{Request}}}]{req }\end{DoxyParamCaption})}
+
+
+
+Logs the details of the given bloacked request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & Current clock cycle. \\
+\hline
+{\em req} & \mbox{\hyperlink{structRequest}{Request}} that was blocked by the load balancer\textquotesingle{}s firewall. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOutputLog_ab02dff373819bbd0ae61151c8faa1987}\label{classOutputLog_ab02dff373819bbd0ae61151c8faa1987}} 
+\index{OutputLog@{OutputLog}!requestCompleted@{requestCompleted}}
+\index{requestCompleted@{requestCompleted}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{requestCompleted()}{requestCompleted()}}
+{\footnotesize\ttfamily void Output\+Log\+::request\+Completed (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{clock,  }\item[{\mbox{\hyperlink{structRequest}{Request}}}]{req,  }\item[{size\+\_\+t}]{server\+Num }\end{DoxyParamCaption})}
+
+
+
+Logs the details of the completed request and the server that it was processed on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & Current clock cycle. \\
+\hline
+{\em req} & \\
+\hline
+{\em server\+Num} & The server that the request was processed on. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOutputLog_a021ce182474a624e8237117990679eb3}\label{classOutputLog_a021ce182474a624e8237117990679eb3}} 
+\index{OutputLog@{OutputLog}!requestDelegated@{requestDelegated}}
+\index{requestDelegated@{requestDelegated}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{requestDelegated()}{requestDelegated()}}
+{\footnotesize\ttfamily void Output\+Log\+::request\+Delegated (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{clock,  }\item[{\mbox{\hyperlink{structRequest}{Request}}}]{req,  }\item[{size\+\_\+t}]{server\+Num }\end{DoxyParamCaption})}
+
+
+
+Logs the details of the given request and the server that it was delegated to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & Current clock cycle. \\
+\hline
+{\em req} & \mbox{\hyperlink{structRequest}{Request}} that was delegated by the load balancer. \\
+\hline
+{\em server\+Num} & The server that the request was delegated to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOutputLog_a53f89d5a61754159ad1fed8d9ba547e5}\label{classOutputLog_a53f89d5a61754159ad1fed8d9ba547e5}} 
+\index{OutputLog@{OutputLog}!requestReceived@{requestReceived}}
+\index{requestReceived@{requestReceived}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{requestReceived()}{requestReceived()}}
+{\footnotesize\ttfamily void Output\+Log\+::request\+Received (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{clock,  }\item[{\mbox{\hyperlink{structRequest}{Request}}}]{req }\end{DoxyParamCaption})}
+
+
+
+Logs the details of the given new request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & Current clock cycle. \\
+\hline
+{\em req} & New request received by the load balancer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOutputLog_afecebb38746a4530330b7f4e6f3faa7a}\label{classOutputLog_afecebb38746a4530330b7f4e6f3faa7a}} 
+\index{OutputLog@{OutputLog}!serverAdded@{serverAdded}}
+\index{serverAdded@{serverAdded}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{serverAdded()}{serverAdded()}}
+{\footnotesize\ttfamily void Output\+Log\+::server\+Added (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{clock,  }\item[{size\+\_\+t}]{server\+Num }\end{DoxyParamCaption})}
+
+
+
+Logs the addition of a web server by the load balancer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & Current clock cycle. \\
+\hline
+{\em server\+Num} & The server that was recently added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOutputLog_a809a995ae0a1e63c1f982a9ee41f66d1}\label{classOutputLog_a809a995ae0a1e63c1f982a9ee41f66d1}} 
+\index{OutputLog@{OutputLog}!serverRemoved@{serverRemoved}}
+\index{serverRemoved@{serverRemoved}!OutputLog@{OutputLog}}
+\doxysubsubsection{\texorpdfstring{serverRemoved()}{serverRemoved()}}
+{\footnotesize\ttfamily void Output\+Log\+::server\+Removed (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{clock,  }\item[{size\+\_\+t}]{server\+Num }\end{DoxyParamCaption})}
+
+
+
+Logs the deletion of a web server by the load balancer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & Current clock cycle. \\
+\hline
+{\em server\+Num} & The server that was recently removed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{OutputLog_8h}{Output\+Log.\+h}}\item 
+\mbox{\hyperlink{OutputLog_8cpp}{Output\+Log.\+cpp}}\end{DoxyCompactItemize}

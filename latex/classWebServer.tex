@@ -1,0 +1,136 @@
+\hypertarget{classWebServer}{}\doxysection{Web\+Server Class Reference}
+\label{classWebServer}\index{WebServer@{WebServer}}
+
+
+Represents a web server endpoint that processes incoming requests.  
+
+
+
+
+{\ttfamily \#include $<$Web\+Server.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classWebServer_ad053f4e1808a3c10c7522d0dbbbc031a}\label{classWebServer_ad053f4e1808a3c10c7522d0dbbbc031a}} 
+\mbox{\hyperlink{classWebServer_ad053f4e1808a3c10c7522d0dbbbc031a}{Web\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new Web Server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classWebServer_aa5e1fe7b67c6ef5bef717d774ccb53f9}{get\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the request currently being processed. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebServer_a936e9e3b465d88feb25a717088ae2266}{get\+Time\+Remaining}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the time remaining to finish processing the current request. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_a8d7f85245b57e2ed56686d84da65f86e}{has\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Checks status of if the server is currently processing a request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebServer_ad8ffe6783802d3879af894f0eb8d63c0}{receive\+Request}} (\mbox{\hyperlink{structRequest}{Request}} req)
+\begin{DoxyCompactList}\small\item\em Receives request to be processed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_a17212110a60daab0d1d99d048c09dabd}{process\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Processes the current request for a single clock cycle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_a3a77b0b16526340441b939f95726ec22}{has\+Completed\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the status of if the current process has been fully processed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classWebServer_a53c7af5fbdb91c4384b8c091c1b7a5f7}{finish\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Finishes the request currently being processed and returns the server to an idle state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a web server endpoint that processes incoming requests. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebServer_a53c7af5fbdb91c4384b8c091c1b7a5f7}\label{classWebServer_a53c7af5fbdb91c4384b8c091c1b7a5f7}} 
+\index{WebServer@{WebServer}!finishRequest@{finishRequest}}
+\index{finishRequest@{finishRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{finishRequest()}{finishRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRequest}{Request}} Web\+Server\+::finish\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Finishes the request currently being processed and returns the server to an idle state. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structRequest}{Request}} that has been finished. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_aa5e1fe7b67c6ef5bef717d774ccb53f9}\label{classWebServer_aa5e1fe7b67c6ef5bef717d774ccb53f9}} 
+\index{WebServer@{WebServer}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{getRequest()}{getRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRequest}{Request}} Web\+Server\+::get\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the request currently being processed. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structRequest}{Request}} being processed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_a936e9e3b465d88feb25a717088ae2266}\label{classWebServer_a936e9e3b465d88feb25a717088ae2266}} 
+\index{WebServer@{WebServer}!getTimeRemaining@{getTimeRemaining}}
+\index{getTimeRemaining@{getTimeRemaining}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{getTimeRemaining()}{getTimeRemaining()}}
+{\footnotesize\ttfamily int Web\+Server\+::get\+Time\+Remaining (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the time remaining to finish processing the current request. 
+
+\begin{DoxyReturn}{Returns}
+Time remaining in current process (int). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_a3a77b0b16526340441b939f95726ec22}\label{classWebServer_a3a77b0b16526340441b939f95726ec22}} 
+\index{WebServer@{WebServer}!hasCompletedRequest@{hasCompletedRequest}}
+\index{hasCompletedRequest@{hasCompletedRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{hasCompletedRequest()}{hasCompletedRequest()}}
+{\footnotesize\ttfamily bool Web\+Server\+::has\+Completed\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the status of if the current process has been fully processed. 
+
+\begin{DoxyReturn}{Returns}
+True if the request has been completed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_a8d7f85245b57e2ed56686d84da65f86e}\label{classWebServer_a8d7f85245b57e2ed56686d84da65f86e}} 
+\index{WebServer@{WebServer}!hasRequest@{hasRequest}}
+\index{hasRequest@{hasRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{hasRequest()}{hasRequest()}}
+{\footnotesize\ttfamily bool Web\+Server\+::has\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks status of if the server is currently processing a request. 
+
+\begin{DoxyReturn}{Returns}
+True if the web server is processing a request, false if it is idle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_a17212110a60daab0d1d99d048c09dabd}\label{classWebServer_a17212110a60daab0d1d99d048c09dabd}} 
+\index{WebServer@{WebServer}!processRequest@{processRequest}}
+\index{processRequest@{processRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{processRequest()}{processRequest()}}
+{\footnotesize\ttfamily bool Web\+Server\+::process\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Processes the current request for a single clock cycle. 
+
+\begin{DoxyReturn}{Returns}
+True if the request has been completed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_ad8ffe6783802d3879af894f0eb8d63c0}\label{classWebServer_ad8ffe6783802d3879af894f0eb8d63c0}} 
+\index{WebServer@{WebServer}!receiveRequest@{receiveRequest}}
+\index{receiveRequest@{receiveRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{receiveRequest()}{receiveRequest()}}
+{\footnotesize\ttfamily void Web\+Server\+::receive\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRequest}{Request}}}]{req }\end{DoxyParamCaption})}
+
+
+
+Receives request to be processed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The new request the server will begin processing. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WebServer_8h}{Web\+Server.\+h}}\item 
+\mbox{\hyperlink{WebServer_8cpp}{Web\+Server.\+cpp}}\end{DoxyCompactItemize}

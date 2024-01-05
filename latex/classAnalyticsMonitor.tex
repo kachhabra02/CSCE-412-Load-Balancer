@@ -1,0 +1,215 @@
+\hypertarget{classAnalyticsMonitor}{}\doxysection{Analytics\+Monitor Class Reference}
+\label{classAnalyticsMonitor}\index{AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAnalyticsMonitor_a8da4734977c34683143ab3a4342cf893}{Analytics\+Monitor}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new, default Analytics Monitor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAnalyticsMonitor_a371f27fbb0d20834eccaa64f98527dd7}{Analytics\+Monitor}} (string fname)
+\begin{DoxyCompactList}\small\item\em Construct a new Analytics Monitor that writes to the given file.. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAnalyticsMonitor_a9aefb4ef38c0590eb721a876031ad2e4}{$\sim$\+Analytics\+Monitor}} ()
+\begin{DoxyCompactList}\small\item\em Closes and finalizes the analytics monitor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnalyticsMonitor_a9a3c38d340a086e4ad55c9c40b1e9fad}{update\+Server\+And\+Request\+Data}} (int clock, int num\+Servers, int num\+Servers\+Full, int num\+Requests)
+\begin{DoxyCompactList}\small\item\em Updates the analytics trackers based on the provided clock cycle\textquotesingle{}s metrics. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnalyticsMonitor_ae620a459a2282672772b2d1d6693ae5f}{request\+Received}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the total number of requests received by the load balancer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnalyticsMonitor_a56f78d2344848bd6d1b5d1f2fe71bda6}{request\+Delegated}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the total number of requests delegated to web servers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnalyticsMonitor_a43acb57fde8e3ea9eff428129ef1a632}{request\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the total number of requests completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnalyticsMonitor_ad974adb9e327aa28fa93cbf23a2adeb4}{request\+Blocked}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the total number of requests blocked by the load balancer\textquotesingle{}s firewall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classAnalyticsMonitor_afab318c49b603d8c0f254001eb464f57}{min\+Servers}} = 0
+\item 
+int \mbox{\hyperlink{classAnalyticsMonitor_a58dc7bd94a962f9d5ac09243904f562b}{max\+Servers}} = 0
+\item 
+double \mbox{\hyperlink{classAnalyticsMonitor_a61dae1f6c126f3140a6dbdd35eb5fc03}{avg\+Servers}} = 0.\+0
+\item 
+int \mbox{\hyperlink{classAnalyticsMonitor_a187aeae7dad75c13fab9b6f17a06b7fb}{min\+Requests}} = 0
+\item 
+int \mbox{\hyperlink{classAnalyticsMonitor_aa073bd41182fa3ccbfede20261146fe3}{max\+Requests}} = 0
+\item 
+double \mbox{\hyperlink{classAnalyticsMonitor_ad26327dd83dc663b3b9449e48f24d5ae}{avg\+Requests}} = 0.\+0
+\item 
+int \mbox{\hyperlink{classAnalyticsMonitor_a2ec7e9a00e2361fa73ac34d15326acbf}{num\+Received}} = 0
+\item 
+int \mbox{\hyperlink{classAnalyticsMonitor_ae7d9eb1266f47389b9aff8d3e1fda405}{num\+Delegated}} = 0
+\item 
+int \mbox{\hyperlink{classAnalyticsMonitor_a2a0c25fb1012cdb04202b197588c7604}{num\+Completed}} = 0
+\item 
+int \mbox{\hyperlink{classAnalyticsMonitor_a40d2f2a9964cb5c0c972a9b76902fa55}{num\+Blocked}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAnalyticsMonitor_a8da4734977c34683143ab3a4342cf893}\label{classAnalyticsMonitor_a8da4734977c34683143ab3a4342cf893}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!AnalyticsMonitor@{AnalyticsMonitor}}
+\index{AnalyticsMonitor@{AnalyticsMonitor}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{AnalyticsMonitor()}{AnalyticsMonitor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Analytics\+Monitor\+::\+Analytics\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new, default Analytics Monitor. 
+
+\mbox{\Hypertarget{classAnalyticsMonitor_a371f27fbb0d20834eccaa64f98527dd7}\label{classAnalyticsMonitor_a371f27fbb0d20834eccaa64f98527dd7}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!AnalyticsMonitor@{AnalyticsMonitor}}
+\index{AnalyticsMonitor@{AnalyticsMonitor}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{AnalyticsMonitor()}{AnalyticsMonitor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Analytics\+Monitor\+::\+Analytics\+Monitor (\begin{DoxyParamCaption}\item[{string}]{fname }\end{DoxyParamCaption})}
+
+
+
+Construct a new Analytics Monitor that writes to the given file.. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnalyticsMonitor_a9aefb4ef38c0590eb721a876031ad2e4}\label{classAnalyticsMonitor_a9aefb4ef38c0590eb721a876031ad2e4}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!````~AnalyticsMonitor@{$\sim$AnalyticsMonitor}}
+\index{````~AnalyticsMonitor@{$\sim$AnalyticsMonitor}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{$\sim$AnalyticsMonitor()}{~AnalyticsMonitor()}}
+{\footnotesize\ttfamily Analytics\+Monitor\+::$\sim$\+Analytics\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes and finalizes the analytics monitor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnalyticsMonitor_ad974adb9e327aa28fa93cbf23a2adeb4}\label{classAnalyticsMonitor_ad974adb9e327aa28fa93cbf23a2adeb4}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!requestBlocked@{requestBlocked}}
+\index{requestBlocked@{requestBlocked}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{requestBlocked()}{requestBlocked()}}
+{\footnotesize\ttfamily void Analytics\+Monitor\+::request\+Blocked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the total number of requests blocked by the load balancer\textquotesingle{}s firewall. 
+
+\mbox{\Hypertarget{classAnalyticsMonitor_a43acb57fde8e3ea9eff428129ef1a632}\label{classAnalyticsMonitor_a43acb57fde8e3ea9eff428129ef1a632}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!requestCompleted@{requestCompleted}}
+\index{requestCompleted@{requestCompleted}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{requestCompleted()}{requestCompleted()}}
+{\footnotesize\ttfamily void Analytics\+Monitor\+::request\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the total number of requests completed. 
+
+\mbox{\Hypertarget{classAnalyticsMonitor_a56f78d2344848bd6d1b5d1f2fe71bda6}\label{classAnalyticsMonitor_a56f78d2344848bd6d1b5d1f2fe71bda6}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!requestDelegated@{requestDelegated}}
+\index{requestDelegated@{requestDelegated}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{requestDelegated()}{requestDelegated()}}
+{\footnotesize\ttfamily void Analytics\+Monitor\+::request\+Delegated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the total number of requests delegated to web servers. 
+
+\mbox{\Hypertarget{classAnalyticsMonitor_ae620a459a2282672772b2d1d6693ae5f}\label{classAnalyticsMonitor_ae620a459a2282672772b2d1d6693ae5f}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!requestReceived@{requestReceived}}
+\index{requestReceived@{requestReceived}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{requestReceived()}{requestReceived()}}
+{\footnotesize\ttfamily void Analytics\+Monitor\+::request\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the total number of requests received by the load balancer. 
+
+\mbox{\Hypertarget{classAnalyticsMonitor_a9a3c38d340a086e4ad55c9c40b1e9fad}\label{classAnalyticsMonitor_a9a3c38d340a086e4ad55c9c40b1e9fad}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!updateServerAndRequestData@{updateServerAndRequestData}}
+\index{updateServerAndRequestData@{updateServerAndRequestData}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{updateServerAndRequestData()}{updateServerAndRequestData()}}
+{\footnotesize\ttfamily void Analytics\+Monitor\+::update\+Server\+And\+Request\+Data (\begin{DoxyParamCaption}\item[{int}]{clock,  }\item[{int}]{num\+Servers,  }\item[{int}]{num\+Servers\+Full,  }\item[{int}]{num\+Requests }\end{DoxyParamCaption})}
+
+
+
+Updates the analytics trackers based on the provided clock cycle\textquotesingle{}s metrics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clock} & Current clock cycle. \\
+\hline
+{\em num\+Servers} & Number of servers that are currently running. \\
+\hline
+{\em num\+Servers\+Full} & Number of servers that a busy processing a request. \\
+\hline
+{\em num\+Requests} & Number of requests that are waiting in the request queue. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAnalyticsMonitor_ad26327dd83dc663b3b9449e48f24d5ae}\label{classAnalyticsMonitor_ad26327dd83dc663b3b9449e48f24d5ae}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!avgRequests@{avgRequests}}
+\index{avgRequests@{avgRequests}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{avgRequests}{avgRequests}}
+{\footnotesize\ttfamily double Analytics\+Monitor\+::avg\+Requests = 0.\+0}
+
+Average number of requests queued throughout simulation. \mbox{\Hypertarget{classAnalyticsMonitor_a61dae1f6c126f3140a6dbdd35eb5fc03}\label{classAnalyticsMonitor_a61dae1f6c126f3140a6dbdd35eb5fc03}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!avgServers@{avgServers}}
+\index{avgServers@{avgServers}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{avgServers}{avgServers}}
+{\footnotesize\ttfamily double Analytics\+Monitor\+::avg\+Servers = 0.\+0}
+
+Average number of web servers up throughout simulation. \mbox{\Hypertarget{classAnalyticsMonitor_aa073bd41182fa3ccbfede20261146fe3}\label{classAnalyticsMonitor_aa073bd41182fa3ccbfede20261146fe3}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!maxRequests@{maxRequests}}
+\index{maxRequests@{maxRequests}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{maxRequests}{maxRequests}}
+{\footnotesize\ttfamily int Analytics\+Monitor\+::max\+Requests = 0}
+
+Maximum number of requests queued at any given time during simulation. \mbox{\Hypertarget{classAnalyticsMonitor_a58dc7bd94a962f9d5ac09243904f562b}\label{classAnalyticsMonitor_a58dc7bd94a962f9d5ac09243904f562b}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!maxServers@{maxServers}}
+\index{maxServers@{maxServers}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{maxServers}{maxServers}}
+{\footnotesize\ttfamily int Analytics\+Monitor\+::max\+Servers = 0}
+
+Maximum number of web servers up at any given time during simulation. \mbox{\Hypertarget{classAnalyticsMonitor_a187aeae7dad75c13fab9b6f17a06b7fb}\label{classAnalyticsMonitor_a187aeae7dad75c13fab9b6f17a06b7fb}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!minRequests@{minRequests}}
+\index{minRequests@{minRequests}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{minRequests}{minRequests}}
+{\footnotesize\ttfamily int Analytics\+Monitor\+::min\+Requests = 0}
+
+Minimum number of requests queued at any given time during simulation. \mbox{\Hypertarget{classAnalyticsMonitor_afab318c49b603d8c0f254001eb464f57}\label{classAnalyticsMonitor_afab318c49b603d8c0f254001eb464f57}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!minServers@{minServers}}
+\index{minServers@{minServers}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{minServers}{minServers}}
+{\footnotesize\ttfamily int Analytics\+Monitor\+::min\+Servers = 0}
+
+Minimum number of web servers up at any given time during simulation. \mbox{\Hypertarget{classAnalyticsMonitor_a40d2f2a9964cb5c0c972a9b76902fa55}\label{classAnalyticsMonitor_a40d2f2a9964cb5c0c972a9b76902fa55}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!numBlocked@{numBlocked}}
+\index{numBlocked@{numBlocked}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{numBlocked}{numBlocked}}
+{\footnotesize\ttfamily int Analytics\+Monitor\+::num\+Blocked = 0}
+
+Total number of requests blocked by the load balancer\textquotesingle{}s firewall. \mbox{\Hypertarget{classAnalyticsMonitor_a2a0c25fb1012cdb04202b197588c7604}\label{classAnalyticsMonitor_a2a0c25fb1012cdb04202b197588c7604}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!numCompleted@{numCompleted}}
+\index{numCompleted@{numCompleted}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{numCompleted}{numCompleted}}
+{\footnotesize\ttfamily int Analytics\+Monitor\+::num\+Completed = 0}
+
+Total number of requests completed. \mbox{\Hypertarget{classAnalyticsMonitor_ae7d9eb1266f47389b9aff8d3e1fda405}\label{classAnalyticsMonitor_ae7d9eb1266f47389b9aff8d3e1fda405}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!numDelegated@{numDelegated}}
+\index{numDelegated@{numDelegated}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{numDelegated}{numDelegated}}
+{\footnotesize\ttfamily int Analytics\+Monitor\+::num\+Delegated = 0}
+
+Total number of requests delegated to web servers. \mbox{\Hypertarget{classAnalyticsMonitor_a2ec7e9a00e2361fa73ac34d15326acbf}\label{classAnalyticsMonitor_a2ec7e9a00e2361fa73ac34d15326acbf}} 
+\index{AnalyticsMonitor@{AnalyticsMonitor}!numReceived@{numReceived}}
+\index{numReceived@{numReceived}!AnalyticsMonitor@{AnalyticsMonitor}}
+\doxysubsubsection{\texorpdfstring{numReceived}{numReceived}}
+{\footnotesize\ttfamily int Analytics\+Monitor\+::num\+Received = 0}
+
+Total number of requests received by the load balancer. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{AnalyticsMonitor_8h}{Analytics\+Monitor.\+h}}\item 
+\mbox{\hyperlink{AnalyticsMonitor_8cpp}{Analytics\+Monitor.\+cpp}}\end{DoxyCompactItemize}

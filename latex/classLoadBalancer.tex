@@ -1,0 +1,210 @@
+\hypertarget{classLoadBalancer}{}\doxysection{Load\+Balancer Class Reference}
+\label{classLoadBalancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Load balancer that manages incoming requests and distributes them across various web server endpoints.  
+
+
+
+
+{\ttfamily \#include $<$Load\+Balancer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLoadBalancer_a6e6669a6a4f0c3df345a13246b17a84b}{Load\+Balancer}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new, default Load Balancer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLoadBalancer_a626e141be35fcd26dd0511066cc7137c}{Load\+Balancer}} (size\+\_\+t num\+Servers)
+\begin{DoxyCompactList}\small\item\em Construct a new Load Balancer with the gievn number of starting servers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLoadBalancer_a364e9924348bbef4fb1a8ccec2dd9deb}{Load\+Balancer}} (size\+\_\+t num\+Servers, \mbox{\hyperlink{classOutputLog}{Output\+Log}} $\ast$out)
+\begin{DoxyCompactList}\small\item\em Construct a new Load Balancer with the given number of starting servers and output log. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLoadBalancer_aed228a774685e91e33c08f7ac89b0ce1}{Load\+Balancer}} (size\+\_\+t num\+Servers, \mbox{\hyperlink{classAnalyticsMonitor}{Analytics\+Monitor}} $\ast$mon)
+\begin{DoxyCompactList}\small\item\em Construct a new Load Balancer with the given number of starting servers and analytics monitor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLoadBalancer_abeca42b4bdbcd0f987af22e1802b9418}{Load\+Balancer}} (size\+\_\+t num\+Servers, \mbox{\hyperlink{classOutputLog}{Output\+Log}} $\ast$out, \mbox{\hyperlink{classAnalyticsMonitor}{Analytics\+Monitor}} $\ast$mon)
+\begin{DoxyCompactList}\small\item\em Construct a new Load Balancer with the given number of starting servers, output log, and analytics monitor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_ac3d51a8a932566ec2aa3cd2d17a2e50f}{set\+I\+P\+Blocker}} (string low, string high)
+\begin{DoxyCompactList}\small\item\em Sets the firewall for the load balancer to block requests from IP addresses in the given range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a03779baa97cdae681fcdb61263aceafe}{tick\+Clock}} ()
+\begin{DoxyCompactList}\small\item\em Performs one clock cycle of delegating and processing received requests. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a3ff15930067a08e15b5c4f0d4e18ed18}{receive\+Requests}} (vector$<$ \mbox{\hyperlink{structRequest}{Request}} $>$ reqs)
+\begin{DoxyCompactList}\small\item\em Receives/queues or blocks incoming requests. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLoadBalancer_a26f7dd8e8fae4b68cf0ae7e70edbcf3d}{num\+Requests\+Queued}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of requests that are currently queued for processing. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLoadBalancer_a0d3386d2f04e555b1304620e4fc812cf}{num\+Servers\+Full}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of servers that are currently processing a request (not idle). \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classLoadBalancer_afc3ac0036effb4c688232dc636d1b7fd}{get\+Clock}} ()
+\begin{DoxyCompactList}\small\item\em Retrives the current clock cycle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Load balancer that manages incoming requests and distributes them across various web server endpoints. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLoadBalancer_a6e6669a6a4f0c3df345a13246b17a84b}\label{classLoadBalancer_a6e6669a6a4f0c3df345a13246b17a84b}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new, default Load Balancer. 
+
+\mbox{\Hypertarget{classLoadBalancer_a626e141be35fcd26dd0511066cc7137c}\label{classLoadBalancer_a626e141be35fcd26dd0511066cc7137c}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Servers }\end{DoxyParamCaption})}
+
+
+
+Construct a new Load Balancer with the gievn number of starting servers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Servers} & Number of web servers that the load balancer starts with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a364e9924348bbef4fb1a8ccec2dd9deb}\label{classLoadBalancer_a364e9924348bbef4fb1a8ccec2dd9deb}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Servers,  }\item[{\mbox{\hyperlink{classOutputLog}{Output\+Log}} $\ast$}]{out }\end{DoxyParamCaption})}
+
+
+
+Construct a new Load Balancer with the given number of starting servers and output log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Servers} & Number of web servers that the load balancer starts with. \\
+\hline
+{\em out} & Pointer to output log for the simulation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_aed228a774685e91e33c08f7ac89b0ce1}\label{classLoadBalancer_aed228a774685e91e33c08f7ac89b0ce1}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Servers,  }\item[{\mbox{\hyperlink{classAnalyticsMonitor}{Analytics\+Monitor}} $\ast$}]{mon }\end{DoxyParamCaption})}
+
+
+
+Construct a new Load Balancer with the given number of starting servers and analytics monitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Servers} & Number of web servers that the load balancer starts with. \\
+\hline
+{\em mon} & Pointer to analytics monitor for the simulation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_abeca42b4bdbcd0f987af22e1802b9418}\label{classLoadBalancer_abeca42b4bdbcd0f987af22e1802b9418}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Servers,  }\item[{\mbox{\hyperlink{classOutputLog}{Output\+Log}} $\ast$}]{out,  }\item[{\mbox{\hyperlink{classAnalyticsMonitor}{Analytics\+Monitor}} $\ast$}]{mon }\end{DoxyParamCaption})}
+
+
+
+Construct a new Load Balancer with the given number of starting servers, output log, and analytics monitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Servers} & Number of web servers that the load balancer starts with. \\
+\hline
+{\em out} & Pointer to output log for the simulation. \\
+\hline
+{\em mon} & Pointer to analytics monitor for the simulation. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadBalancer_afc3ac0036effb4c688232dc636d1b7fd}\label{classLoadBalancer_afc3ac0036effb4c688232dc636d1b7fd}} 
+\index{LoadBalancer@{LoadBalancer}!getClock@{getClock}}
+\index{getClock@{getClock}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{getClock()}{getClock()}}
+{\footnotesize\ttfamily size\+\_\+t Load\+Balancer\+::get\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrives the current clock cycle. 
+
+\begin{DoxyReturn}{Returns}
+The current clock cycle (size\+\_\+t) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoadBalancer_a26f7dd8e8fae4b68cf0ae7e70edbcf3d}\label{classLoadBalancer_a26f7dd8e8fae4b68cf0ae7e70edbcf3d}} 
+\index{LoadBalancer@{LoadBalancer}!numRequestsQueued@{numRequestsQueued}}
+\index{numRequestsQueued@{numRequestsQueued}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{numRequestsQueued()}{numRequestsQueued()}}
+{\footnotesize\ttfamily int Load\+Balancer\+::num\+Requests\+Queued (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the number of requests that are currently queued for processing. 
+
+\begin{DoxyReturn}{Returns}
+Number of queued requests (int). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoadBalancer_a0d3386d2f04e555b1304620e4fc812cf}\label{classLoadBalancer_a0d3386d2f04e555b1304620e4fc812cf}} 
+\index{LoadBalancer@{LoadBalancer}!numServersFull@{numServersFull}}
+\index{numServersFull@{numServersFull}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{numServersFull()}{numServersFull()}}
+{\footnotesize\ttfamily int Load\+Balancer\+::num\+Servers\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the number of servers that are currently processing a request (not idle). 
+
+\begin{DoxyReturn}{Returns}
+Number of servers that are not idle (int). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoadBalancer_a3ff15930067a08e15b5c4f0d4e18ed18}\label{classLoadBalancer_a3ff15930067a08e15b5c4f0d4e18ed18}} 
+\index{LoadBalancer@{LoadBalancer}!receiveRequests@{receiveRequests}}
+\index{receiveRequests@{receiveRequests}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{receiveRequests()}{receiveRequests()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::receive\+Requests (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structRequest}{Request}} $>$}]{reqs }\end{DoxyParamCaption})}
+
+
+
+Receives/queues or blocks incoming requests. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reqs} & Vector of incoming requests. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_ac3d51a8a932566ec2aa3cd2d17a2e50f}\label{classLoadBalancer_ac3d51a8a932566ec2aa3cd2d17a2e50f}} 
+\index{LoadBalancer@{LoadBalancer}!setIPBlocker@{setIPBlocker}}
+\index{setIPBlocker@{setIPBlocker}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{setIPBlocker()}{setIPBlocker()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::set\+I\+P\+Blocker (\begin{DoxyParamCaption}\item[{string}]{low,  }\item[{string}]{high }\end{DoxyParamCaption})}
+
+
+
+Sets the firewall for the load balancer to block requests from IP addresses in the given range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em low} & Lower bound of IP addresses to block. \\
+\hline
+{\em high} & Upper bound of IP addresses to block. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a03779baa97cdae681fcdb61263aceafe}\label{classLoadBalancer_a03779baa97cdae681fcdb61263aceafe}} 
+\index{LoadBalancer@{LoadBalancer}!tickClock@{tickClock}}
+\index{tickClock@{tickClock}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{tickClock()}{tickClock()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::tick\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Performs one clock cycle of delegating and processing received requests. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LoadBalancer_8h}{Load\+Balancer.\+h}}\item 
+\mbox{\hyperlink{LoadBalancer_8cpp}{Load\+Balancer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,3 +1,8 @@
+/** @file RequestQueue.cpp
+* @brief Implements the RequestQueue class.
+* @author Krish Chhabra
+*/
+
 #include "RequestQueue.h"
 
 RequestQueue::RequestQueue() {}

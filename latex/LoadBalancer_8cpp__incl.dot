@@ -1,0 +1,42 @@
+digraph "LoadBalancer.cpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="LoadBalancer.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Implements the LoadBalancer class."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="LoadBalancer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LoadBalancer_8h.html",tooltip="Defines the LoadBalancer class."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="WebServer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$WebServer_8h.html",tooltip="Defines the WebServer class."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Request.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Request_8h.html",tooltip="Declares the Request data struct."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="RequestQueue.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$RequestQueue_8h.html",tooltip="Defines the RequestQueue class."];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="queue",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="AnalyticsMonitor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$AnalyticsMonitor_8h.html",tooltip="Defines the AnalyticsMonitor class."];
+  Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="fstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="OutputLog.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$OutputLog_8h.html",tooltip="Defines the OutputLog class."];
+  Node11 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="iomanip",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node11 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="bitset",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="sstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,3 +1,8 @@
+/** @file Simulator.cpp
+* @brief Driver for load balancer simulation.
+* @author Krish Chhabra
+*/
+
 #include "LoadBalancer.h"
 #include "RequestGenerator.h"
 #include <math.h>
@@ -28,6 +33,9 @@ using std::cout, std::cin, std::endl;
 
 #define START_REQ_FACTOR 20
 
+/**
+ * @brief Runs the simulation UI that generates a customized scenario to demonstrate the load balancer.
+ */
 int main() {
     cout << "How many web servers would you like to start with? ";
     int numServers;

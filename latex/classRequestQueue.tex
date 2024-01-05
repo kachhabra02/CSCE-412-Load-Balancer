@@ -1,0 +1,110 @@
+\hypertarget{classRequestQueue}{}\doxysection{Request\+Queue Class Reference}
+\label{classRequestQueue}\index{RequestQueue@{RequestQueue}}
+
+
+Monitor that tracks and stores analytical information on load balancer simulation.  
+
+
+
+
+{\ttfamily \#include $<$Analytics\+Monitor.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRequestQueue_aa9c18ac5654af41e64ded2d7001c24f5}\label{classRequestQueue_aa9c18ac5654af41e64ded2d7001c24f5}} 
+\mbox{\hyperlink{classRequestQueue_aa9c18ac5654af41e64ded2d7001c24f5}{Request\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty request queue. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classRequestQueue_a35b8c47e9856ded7d779f299a6052ce0}{size}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves number of requests in queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRequestQueue_aaba0cd9ffc42a84ed759ffde763792d1}{empty}} ()
+\begin{DoxyCompactList}\small\item\em Checks if their are any requests in the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRequestQueue_adbbda18f07fbfe710664e3096b9c552f}{push}} (\mbox{\hyperlink{structRequest}{Request}} req)
+\begin{DoxyCompactList}\small\item\em Adds a request to the end of the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Removes request from the front of the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classRequestQueue_a1b489f01f4a75de54a8167195b9c60ea}{front}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves request from the front of the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Monitor that tracks and stores analytical information on load balancer simulation. 
+
+Queue for holding \mbox{\hyperlink{structRequest}{Request}} objects.
+
+Scribe class that generates a log of the activities performed during a load balancer simulation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRequestQueue_aaba0cd9ffc42a84ed759ffde763792d1}\label{classRequestQueue_aaba0cd9ffc42a84ed759ffde763792d1}} 
+\index{RequestQueue@{RequestQueue}!empty@{empty}}
+\index{empty@{empty}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Request\+Queue\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if their are any requests in the queue. 
+
+\begin{DoxyReturn}{Returns}
+True is no requests in the queue, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequestQueue_a1b489f01f4a75de54a8167195b9c60ea}\label{classRequestQueue_a1b489f01f4a75de54a8167195b9c60ea}} 
+\index{RequestQueue@{RequestQueue}!front@{front}}
+\index{front@{front}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRequest}{Request}} Request\+Queue\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves request from the front of the queue. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structRequest}{Request}} at the front of the queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}\label{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}} 
+\index{RequestQueue@{RequestQueue}!pop@{pop}}
+\index{pop@{pop}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRequest}{Request}} Request\+Queue\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes request from the front of the queue. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structRequest}{Request}} that was removed from the queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequestQueue_adbbda18f07fbfe710664e3096b9c552f}\label{classRequestQueue_adbbda18f07fbfe710664e3096b9c552f}} 
+\index{RequestQueue@{RequestQueue}!push@{push}}
+\index{push@{push}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void Request\+Queue\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRequest}{Request}}}]{req }\end{DoxyParamCaption})}
+
+
+
+Adds a request to the end of the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \mbox{\hyperlink{structRequest}{Request}} to add to queue. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRequestQueue_a35b8c47e9856ded7d779f299a6052ce0}\label{classRequestQueue_a35b8c47e9856ded7d779f299a6052ce0}} 
+\index{RequestQueue@{RequestQueue}!size@{size}}
+\index{size@{size}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t Request\+Queue\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves number of requests in queue. 
+
+\begin{DoxyReturn}{Returns}
+Number of requests in queue. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{RequestQueue_8h}{Request\+Queue.\+h}}\item 
+\mbox{\hyperlink{RequestQueue_8cpp}{Request\+Queue.\+cpp}}\end{DoxyCompactItemize}

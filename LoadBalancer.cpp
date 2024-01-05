@@ -1,3 +1,8 @@
+/** @file LoadBalancer.cpp
+* @brief Implements the LoadBalancer class.
+* @author Krish Chhabra
+*/
+
 #include "LoadBalancer.h"
 
 uint32_t ipToInt(const std::string& ip) {

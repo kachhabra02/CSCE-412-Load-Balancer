@@ -1,3 +1,8 @@
+/** @file OutputLog.cpp
+* @brief Implements the OutputLog class.
+* @author Krish Chhabra
+*/
+
 #include "OutputLog.h"
 
 OutputLog::OutputLog() : filename("Simulation_Log.txt"), out("Simulation_Log.txt") {

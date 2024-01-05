@@ -1,0 +1,150 @@
+\hypertarget{classRequestGenerator}{}\doxysection{Request\+Generator Class Reference}
+\label{classRequestGenerator}\index{RequestGenerator@{RequestGenerator}}
+
+
+Generator of randomized requests.  
+
+
+
+
+{\ttfamily \#include $<$Request\+Generator.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRequestGenerator_afaed3ddb41016607c73a8497d47a5eb8}{Request\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new, default \mbox{\hyperlink{structRequest}{Request}} Generator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRequestGenerator_ad78970365225bf298f01c8019edfc222}{Request\+Generator}} (int prob)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{structRequest}{Request}} Generator with the given request frequency. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRequestGenerator_a83d3b94028634229699496a3027eb9fb}{Request\+Generator}} (int time\+Min, int time\+Max)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{structRequest}{Request}} Generator object with the given length restraints. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRequestGenerator_adbfca01881620292c2732ce8da9d3865}{Request\+Generator}} (int time\+Min, int time\+Max, int prob)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{structRequest}{Request}} with the given length restraints and request frequency. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRequestGenerator_a27996a740d193f75a5c54b408f91c4a4}{set\+Request\+Probability}} (int prob)
+\begin{DoxyCompactList}\small\item\em Sets the probability of a request being generated. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{structRequest}{Request}} $>$ \mbox{\hyperlink{classRequestGenerator_a0a4ac9e1fbbc153de696e37d72bbeaaf}{get\+Requests}} ()
+\begin{DoxyCompactList}\small\item\em Generates a series of requests with the given likelihood and length restraints. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{structRequest}{Request}} $>$ \mbox{\hyperlink{classRequestGenerator_a2c914ce77fb8ac8c9e62101aad63a800}{get\+Requests}} (int num\+Requests)
+\begin{DoxyCompactList}\small\item\em Generates a series of the given number of requests with the given length restraints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generator of randomized requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRequestGenerator_afaed3ddb41016607c73a8497d47a5eb8}\label{classRequestGenerator_afaed3ddb41016607c73a8497d47a5eb8}} 
+\index{RequestGenerator@{RequestGenerator}!RequestGenerator@{RequestGenerator}}
+\index{RequestGenerator@{RequestGenerator}!RequestGenerator@{RequestGenerator}}
+\doxysubsubsection{\texorpdfstring{RequestGenerator()}{RequestGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Request\+Generator\+::\+Request\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new, default \mbox{\hyperlink{structRequest}{Request}} Generator. 
+
+\mbox{\Hypertarget{classRequestGenerator_ad78970365225bf298f01c8019edfc222}\label{classRequestGenerator_ad78970365225bf298f01c8019edfc222}} 
+\index{RequestGenerator@{RequestGenerator}!RequestGenerator@{RequestGenerator}}
+\index{RequestGenerator@{RequestGenerator}!RequestGenerator@{RequestGenerator}}
+\doxysubsubsection{\texorpdfstring{RequestGenerator()}{RequestGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Request\+Generator\+::\+Request\+Generator (\begin{DoxyParamCaption}\item[{int}]{prob }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{structRequest}{Request}} Generator with the given request frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prob} & Probability that a request will be generated (1 / prob). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRequestGenerator_a83d3b94028634229699496a3027eb9fb}\label{classRequestGenerator_a83d3b94028634229699496a3027eb9fb}} 
+\index{RequestGenerator@{RequestGenerator}!RequestGenerator@{RequestGenerator}}
+\index{RequestGenerator@{RequestGenerator}!RequestGenerator@{RequestGenerator}}
+\doxysubsubsection{\texorpdfstring{RequestGenerator()}{RequestGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Request\+Generator\+::\+Request\+Generator (\begin{DoxyParamCaption}\item[{int}]{time\+Min,  }\item[{int}]{time\+Max }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{structRequest}{Request}} Generator object with the given length restraints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Min} & Minimum length of a single request that is generated. \\
+\hline
+{\em time\+Max} & Maximum length of a single request that is generated. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRequestGenerator_adbfca01881620292c2732ce8da9d3865}\label{classRequestGenerator_adbfca01881620292c2732ce8da9d3865}} 
+\index{RequestGenerator@{RequestGenerator}!RequestGenerator@{RequestGenerator}}
+\index{RequestGenerator@{RequestGenerator}!RequestGenerator@{RequestGenerator}}
+\doxysubsubsection{\texorpdfstring{RequestGenerator()}{RequestGenerator()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Request\+Generator\+::\+Request\+Generator (\begin{DoxyParamCaption}\item[{int}]{time\+Min,  }\item[{int}]{time\+Max,  }\item[{int}]{prob }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{structRequest}{Request}} with the given length restraints and request frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Min} & Minimum length of a single request that is generated. \\
+\hline
+{\em time\+Max} & Maximum length of a single request that is generated. \\
+\hline
+{\em prob} & Probability that a request will be generated (1 / prob). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRequestGenerator_a0a4ac9e1fbbc153de696e37d72bbeaaf}\label{classRequestGenerator_a0a4ac9e1fbbc153de696e37d72bbeaaf}} 
+\index{RequestGenerator@{RequestGenerator}!getRequests@{getRequests}}
+\index{getRequests@{getRequests}!RequestGenerator@{RequestGenerator}}
+\doxysubsubsection{\texorpdfstring{getRequests()}{getRequests()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structRequest}{Request}} $>$ Request\+Generator\+::get\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates a series of requests with the given likelihood and length restraints. 
+
+\begin{DoxyReturn}{Returns}
+Vector of random Requests generated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequestGenerator_a2c914ce77fb8ac8c9e62101aad63a800}\label{classRequestGenerator_a2c914ce77fb8ac8c9e62101aad63a800}} 
+\index{RequestGenerator@{RequestGenerator}!getRequests@{getRequests}}
+\index{getRequests@{getRequests}!RequestGenerator@{RequestGenerator}}
+\doxysubsubsection{\texorpdfstring{getRequests()}{getRequests()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structRequest}{Request}} $>$ Request\+Generator\+::get\+Requests (\begin{DoxyParamCaption}\item[{int}]{num\+Requests }\end{DoxyParamCaption})}
+
+
+
+Generates a series of the given number of requests with the given length restraints. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Requests} & Number of random requests to be generated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of random Requests generated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequestGenerator_a27996a740d193f75a5c54b408f91c4a4}\label{classRequestGenerator_a27996a740d193f75a5c54b408f91c4a4}} 
+\index{RequestGenerator@{RequestGenerator}!setRequestProbability@{setRequestProbability}}
+\index{setRequestProbability@{setRequestProbability}!RequestGenerator@{RequestGenerator}}
+\doxysubsubsection{\texorpdfstring{setRequestProbability()}{setRequestProbability()}}
+{\footnotesize\ttfamily void Request\+Generator\+::set\+Request\+Probability (\begin{DoxyParamCaption}\item[{int}]{prob }\end{DoxyParamCaption})}
+
+
+
+Sets the probability of a request being generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prob} & Probability that a request will be generated (1 / prob). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{RequestGenerator_8h}{Request\+Generator.\+h}}\item 
+\mbox{\hyperlink{RequestGenerator_8cpp}{Request\+Generator.\+cpp}}\end{DoxyCompactItemize}

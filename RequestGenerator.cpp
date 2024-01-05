@@ -1,3 +1,8 @@
+/** @file RequestGenerator.cpp
+* @brief Implements the RequestGenerator class.
+* @author Krish Chhabra
+*/
+
 #include "RequestGenerator.h"
 
 string RequestGenerator::generateIP() {

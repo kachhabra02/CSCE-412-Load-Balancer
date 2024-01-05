@@ -1,3 +1,8 @@
+/** @file WebServer.cpp
+* @brief Implements the WebServer class.
+* @author Krish Chhabra
+*/
+
 #include "WebServer.h"
 
 WebServer::WebServer() : currRequest(), timeRemaining(0), isWorking(false) {}
