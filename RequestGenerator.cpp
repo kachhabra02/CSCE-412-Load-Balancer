@@ -1,7 +1,7 @@
 #include "RequestGenerator.h"
 
 string RequestGenerator::generateIP() {
-    return "" + to_string(rand() % 256) + "." + to_string(rand() % 256) + "." + to_string(rand() % 256) + "." + to_string(rand() % 256);
+    return to_string(rand() % 256) + "." + to_string(rand() % 256) + "." + to_string(rand() % 256) + "." + to_string(rand() % 256);
 }
 
 RequestGenerator::RequestGenerator() : reqTimeMin(4), reqTimeMax(100), reqProb(5) {

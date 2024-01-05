@@ -81,13 +81,12 @@ void LoadBalancer::setIPBlocker(string low, string high) {
 }
 
 void LoadBalancer::tickClock() {
-    // TODO: Check for web server creation or deletion in a better way
-    if (clock > 0 && clock % 10 == 0) {
+    if (clock > 0 && clock % ADJUST_INTERVAL == 0) {
         if (req_q.size() > servers.size() * ADD_FACTOR) {
             servers.push_back(std::move(WebServer()));
 
             if (log) {
-                // TODO: Log server addition
+                log->serverAdded(clock, servers.size());
             }
         }
 
@@ -95,7 +94,7 @@ void LoadBalancer::tickClock() {
             servers.pop_back();
 
             if (log) {
-                // TODO: Log server deletion
+                log->serverRemoved(clock, servers.size() + 1);
             }
         }
     }
@@ -113,7 +112,7 @@ void LoadBalancer::tickClock() {
                 Request* req = servers[i].finishRequest();
 
                 if (log) {
-                    // TODO: Log Completed Request
+                    log->requestCompleted(clock, req, i + 1);
                 }
 
                 if (monitor) {
@@ -128,10 +127,11 @@ void LoadBalancer::tickClock() {
         }
 
         else if (!req_q.empty() && readyForNewReq) {
-            servers[i].receiveRequest(req_q.pop());
+            Request* req = req_q.pop();
+            servers[i].receiveRequest(req);
 
             if (log) {
-                // TODO: Log Recieved Requests
+                log->requestDelegated(clock, req, i + 1);
             }
 
             if (monitor) {
@@ -147,7 +147,7 @@ void LoadBalancer::receiveRequests(vector<Request*> reqs) {
     for (Request* req : reqs) {
         if (isIPBlocked(req->srcIP)) {
             if (log) {
-                // TODO: Log Blocked Request
+                log->requestBlocked(clock, req);
             }
 
             if (monitor) {
@@ -160,11 +160,15 @@ void LoadBalancer::receiveRequests(vector<Request*> reqs) {
         req_q.push(req);
 
         if (log) {
-            // TODO: Log Recieved Requests
+            log->requestReceived(clock, req);
         }
 
         if (monitor) {
             // TODO: Update Recieved Requests
         }
     }
+}
+
+int LoadBalancer::numRequestsQueued() {
+    return req_q.size();
 }

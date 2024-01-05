@@ -8,8 +8,9 @@
 using std::vector;
 
 #define DEFAULT_NUM_SERVERS 20
-#define REMOVE_FACTOR 5
-#define ADD_FACTOR 10
+#define REMOVE_FACTOR 15
+#define ADD_FACTOR 25
+#define ADJUST_INTERVAL 100
 
 class LoadBalancer {
 private:
@@ -34,4 +35,5 @@ public:
     void setIPBlocker(string low, string high);
     void tickClock();
     void receiveRequests(vector<Request*> reqs);
+    int numRequestsQueued();
 };
