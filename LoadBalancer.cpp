@@ -1,38 +1,25 @@
 #include "LoadBalancer.h"
 
+uint32_t ipToInt(const std::string& ip) {
+    std::istringstream iss(ip);
+    uint32_t result = 0;
+    std::string segment;
+    while (std::getline(iss, segment, '.')) {
+        result = (result << 8) | std::stoi(segment);
+    }
+    return result;
+}
+
 bool LoadBalancer::isIPBlocked(string ip) {
     if (ipBlockLow == "" || ipBlockHigh == "") {
         return false;
     }
 
-    size_t pos_low = 0, pos_high = 0, pos_test = 0;
-    for (int i = 0; i < 3; ++i) {
-        size_t pos_low_new = ipBlockLow.find('.', pos_low);
-        size_t pos_high_new = ipBlockHigh.find('.', pos_high);
-        size_t pos_test_new = ip.find('.', pos_test);
+    uint32_t ipInt = ipToInt(ip);
+    uint32_t lowerBoundInt = ipToInt(ipBlockLow);
+    uint32_t upperBoundInt = ipToInt(ipBlockHigh);
 
-        size_t low_num = stoi(ipBlockLow.substr(pos_low, pos_low_new - pos_low));
-        size_t high_num = stoi(ipBlockHigh.substr(pos_high, pos_high_new - pos_high));
-        size_t test_num = stoi(ip.substr(pos_test, pos_test_new - pos_test));
-
-        if (test_num < low_num || test_num > high_num) {
-            return true;
-        }
-
-        pos_low = pos_low_new + 1;
-        pos_high = pos_high_new + 1;
-        pos_test = pos_test_new + 1;
-    }
-
-    size_t low_num = stoi(ipBlockLow.substr(pos_low));
-    size_t high_num = stoi(ipBlockHigh.substr(pos_high));
-    size_t test_num = stoi(ip.substr(pos_test));
-
-    if (test_num < low_num || test_num > high_num) {
-        return true;
-    }
-
-    return false;
+    return (ipInt >= lowerBoundInt) && (ipInt <= upperBoundInt);
 }
 
 LoadBalancer::LoadBalancer() : clock(0), monitor(nullptr), log(nullptr) {
@@ -91,16 +78,12 @@ void LoadBalancer::tickClock() {
         }
 
         else if (servers.size() > 1 && req_q.size() < servers.size() * REMOVE_FACTOR) {
-            servers.pop_back();
-
-            if (log) {
-                log->serverRemoved(clock, servers.size() + 1);
-            }
+            ++serversToRemove;
         }
     }
 
     if (monitor) {
-        monitor->updateServerAndRequestData(clock, servers.size(), req_q.size());
+        monitor->updateServerAndRequestData(clock, servers.size(), numServersFull(), req_q.size());
     }
 
     for (int i = 0; i < servers.size(); ++i) {
@@ -109,7 +92,7 @@ void LoadBalancer::tickClock() {
             servers[i].processRequest();
 
             if (servers[i].hasCompletedRequest()) {
-                Request* req = servers[i].finishRequest();
+                Request req = servers[i].finishRequest();
 
                 if (log) {
                     log->requestCompleted(clock, req, i + 1);
@@ -119,7 +102,14 @@ void LoadBalancer::tickClock() {
                     monitor->requestCompleted();
                 }
 
-                delete req;
+                if ((i == servers.size() - 1) && serversToRemove > 0) {
+                    servers.pop_back();
+                    --serversToRemove;
+
+                    if (log) {
+                        log->serverRemoved(clock, servers.size() + 1);
+                    }
+                }
             }
             else {
                 readyForNewReq = false;
@@ -127,7 +117,7 @@ void LoadBalancer::tickClock() {
         }
 
         if (!req_q.empty() && readyForNewReq) {
-            Request* req = req_q.pop();
+            Request req = req_q.pop();
             servers[i].receiveRequest(req);
 
             if (log) {
@@ -143,9 +133,9 @@ void LoadBalancer::tickClock() {
     ++clock;
 }
 
-void LoadBalancer::receiveRequests(vector<Request*> reqs) {
-    for (Request* req : reqs) {
-        if (isIPBlocked(req->srcIP)) {
+void LoadBalancer::receiveRequests(vector<Request> reqs) {
+    for (Request req : reqs) {
+        if (isIPBlocked(req.srcIP)) {
             if (log) {
                 log->requestBlocked(clock, req);
             }
@@ -175,11 +165,15 @@ int LoadBalancer::numRequestsQueued() {
 
 int LoadBalancer::numServersFull() {
     int count = 0;
-    for (WebServer server : servers) {
+    for (WebServer& server : servers) {
         if (server.hasRequest()) {
             ++count;
         }
     }
 
     return count;
+}
+
+size_t LoadBalancer::getClock() {
+    return clock;
 }

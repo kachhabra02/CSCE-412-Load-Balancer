@@ -8,7 +8,7 @@
 using std::string, std::to_string, std::vector;
 
 #define DEFAULT_MIN_TIME 4
-#define DEFAULT_MAX_TIME 4
+#define DEFAULT_MAX_TIME 100
 
 class RequestGenerator {
 private:
@@ -25,6 +25,6 @@ public:
 
     void setRequestProbability(int prob);
 
-    vector<Request*> getRequests();
-    vector<Request*> getRequests(int numRequests);
+    vector<Request> getRequests();
+    vector<Request> getRequests(int numRequests);
 };

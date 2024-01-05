@@ -1,14 +1,8 @@
 #include "WebServer.h"
 
-WebServer::WebServer() : currRequest(nullptr), timeRemaining(0) {}
+WebServer::WebServer() : currRequest(), timeRemaining(0), isWorking(false) {}
 
-WebServer::~WebServer() {
-    if (currRequest) {
-        delete currRequest;
-    }
-}
-
-Request* WebServer::getRequest() {
+Request WebServer::getRequest() {
     return currRequest;
 }
 
@@ -17,12 +11,13 @@ int WebServer::getTimeRemaining() {
 }
 
 bool WebServer::hasRequest() {
-    return currRequest != nullptr;
+    return isWorking;
 }
 
-void WebServer::receiveRequest(Request* req) {
+void WebServer::receiveRequest(Request req) {
     currRequest = req;
-    timeRemaining = req->time;
+    timeRemaining = req.time;
+    isWorking = true;
 }
 
 bool WebServer::processRequest() {
@@ -34,10 +29,11 @@ bool WebServer::processRequest() {
 }
 
 bool WebServer::hasCompletedRequest() {
-    return (currRequest != nullptr) && (timeRemaining == 0);
+    return (isWorking) && (timeRemaining == 0);
 }
 
-Request* WebServer::finishRequest() {
-    currRequest = nullptr;
+Request WebServer::finishRequest() {
+    isWorking = false;
+    timeRemaining = 0;
     return currRequest;
 }

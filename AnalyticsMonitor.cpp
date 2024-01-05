@@ -11,6 +11,7 @@ AnalyticsMonitor::AnalyticsMonitor(string fname) : filename(fname), out(fname) {
 AnalyticsMonitor::~AnalyticsMonitor() {
     out.flush();
     out.close();
+    cout << "Analytics History for Simulation Written to '" << filename << "'." << endl;
 }
 
 void AnalyticsMonitor::updateServerAndRequestData(int clock, int numServers, int numServersFull, int numRequests) {

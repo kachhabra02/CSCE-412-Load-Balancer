@@ -5,6 +5,8 @@
 #include "AnalyticsMonitor.h"
 #include "OutputLog.h"
 #include <vector>
+#include <bitset>
+#include <sstream>
 using std::vector;
 
 #define DEFAULT_NUM_SERVERS 20
@@ -14,18 +16,17 @@ using std::vector;
 
 class LoadBalancer {
 private:
-    // TODO
     size_t clock;
     RequestQueue req_q;
     vector<WebServer> servers;
     AnalyticsMonitor* monitor;
     OutputLog* log;
+    int serversToRemove = 0;
 
     string ipBlockLow, ipBlockHigh;
     bool isIPBlocked(string ip);
     
 public:
-    // TODO
     LoadBalancer();
     LoadBalancer(size_t numServers);
     LoadBalancer(size_t numServers, OutputLog* out);
@@ -34,7 +35,8 @@ public:
 
     void setIPBlocker(string low, string high);
     void tickClock();
-    void receiveRequests(vector<Request*> reqs);
+    void receiveRequests(vector<Request> reqs);
     int numRequestsQueued();
     int numServersFull();
+    size_t getClock();
 };

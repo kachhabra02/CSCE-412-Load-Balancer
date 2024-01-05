@@ -4,19 +4,19 @@
 
 class WebServer {
 private:
-    Request* currRequest;
+    Request currRequest;
+    bool isWorking;
     int timeRemaining;
 
 public:
     WebServer();
-    ~WebServer();
 
-    Request* getRequest();
+    Request getRequest();
     int getTimeRemaining();
 
     bool hasRequest();
-    void receiveRequest(Request* req);
+    void receiveRequest(Request req);
     bool processRequest();
     bool hasCompletedRequest();
-    Request* finishRequest();
+    Request finishRequest();
 };

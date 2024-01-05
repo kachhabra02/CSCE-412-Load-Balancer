@@ -24,27 +24,31 @@ void RequestGenerator::setRequestProbability(int prob) {
     reqProb = prob;
 }
 
-vector<Request*> RequestGenerator::getRequests() {
-    vector<Request*> requests;
+vector<Request> RequestGenerator::getRequests() {
+    vector<Request> requests;
 
     while ((rand() % reqProb) == 0) {
-        requests.push_back(new Request());
-        requests.back()->srcIP = generateIP();
-        requests.back()->dstIP = generateIP();
-        requests.back()->time = rand() % (reqTimeMax - reqTimeMin + 1) + reqTimeMin;
+        Request r;
+        r.srcIP = generateIP();
+        r.dstIP = generateIP();
+        r.time = rand() % (reqTimeMax - reqTimeMin + 1) + reqTimeMin;
+
+        requests.push_back(std::move(r));
     }
 
     return requests;
 }
 
-vector<Request*> RequestGenerator::getRequests(int numRequests) {
-    vector<Request*> requests;
+vector<Request> RequestGenerator::getRequests(int numRequests) {
+    vector<Request> requests;
 
     for (int i = 0; i < numRequests; ++i) {
-        requests.push_back(new Request());
-        requests.back()->srcIP = generateIP();
-        requests.back()->dstIP = generateIP();
-        requests.back()->time = rand() % (reqTimeMax - reqTimeMin + 1) + reqTimeMin;
+        Request r;
+        r.srcIP = generateIP();
+        r.dstIP = generateIP();
+        r.time = rand() % (reqTimeMax - reqTimeMin + 1) + reqTimeMin;
+
+        requests.push_back(std::move(r));
     }
 
     return requests;

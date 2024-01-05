@@ -15,30 +15,33 @@ OutputLog::OutputLog(string fname) : filename(fname), out(fname) {
 OutputLog::~OutputLog() {
     out.flush();
     out.close();
+    cout << "Full Output Log for Simulation Written to '" << filename << "'." << endl;
 }
 
-void OutputLog::requestReceived(size_t clock, Request* req) {
+void OutputLog::requestReceived(size_t clock, Request req) {
     out << setw(10) << left << clock;
     out.copyfmt(cout);
-    out << " | Received New Request (" << req->srcIP << " -> " << req->dstIP << ")" << endl;
+    out << " | Received New Request (" << req.srcIP << " -> " << req.dstIP << ", " << req.time << " cycles)" << endl;
 }
 
-void OutputLog::requestBlocked(size_t clock, Request* req) {
+void OutputLog::requestBlocked(size_t clock, Request req) {
     out << setw(10) << left << clock;
     out.copyfmt(cout);
-    out << " | Firewall Blocked Incoming Request (" << req->srcIP << " -> " << req->dstIP << ")" << endl;
+    out << " | Firewall Blocked Incoming Request (" << req.srcIP << " -> " << req.dstIP << ", " << req.time << " cycles)" << endl;
 }
 
-void OutputLog::requestDelegated(size_t clock, Request* req, size_t serverNum) {
+void OutputLog::requestDelegated(size_t clock, Request req, size_t serverNum) {
     out << setw(10) << left << clock;
     out.copyfmt(cout);
-    out << " | Request Delegated to Web Server " << serverNum << " (" << req->srcIP << " -> " << req->dstIP << ")" << endl;
+    out << " | Request Delegated to Web Server " << serverNum << " (" << req.srcIP << " -> " << req.dstIP;
+    out << ", " << req.time << " cycles)" << endl;
 }
 
-void OutputLog::requestCompleted(size_t clock, Request* req, size_t serverNum) {
+void OutputLog::requestCompleted(size_t clock, Request req, size_t serverNum) {
     out << setw(10) << left << clock;
     out.copyfmt(cout);
-    out << " | Request Completed by Web Server " << serverNum << " (" << req->srcIP << " -> " << req->dstIP << ")" << endl;
+    out << " | Request Completed by Web Server " << serverNum << " (" << req.srcIP << " -> " << req.dstIP;
+    out << ", " << req.time << " cycles)" << endl;
 }
 
 void OutputLog::serverAdded(size_t clock, size_t serverNum) {

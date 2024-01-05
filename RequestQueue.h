@@ -7,15 +7,14 @@ using std::queue, std::string;
 
 class RequestQueue {
 private:
-    queue<Request*> q;
+    queue<Request> q;
 
 public:
     RequestQueue();
-    ~RequestQueue();
     
     size_t size();
     bool empty();
-    void push(Request* req);
-    Request* pop();
-    Request* front();
+    void push(Request req);
+    Request pop();
+    Request front();
 };

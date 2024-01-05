@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
-using std::string, std::ofstream, std::endl;
+using std::string, std::ofstream, std::cout, std::endl;
 
 class AnalyticsMonitor {
 private:
