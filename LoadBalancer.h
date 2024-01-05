@@ -36,4 +36,5 @@ public:
     void tickClock();
     void receiveRequests(vector<Request*> reqs);
     int numRequestsQueued();
+    int numServersFull();
 };

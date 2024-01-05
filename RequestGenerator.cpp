@@ -4,11 +4,11 @@ string RequestGenerator::generateIP() {
     return to_string(rand() % 256) + "." + to_string(rand() % 256) + "." + to_string(rand() % 256) + "." + to_string(rand() % 256);
 }
 
-RequestGenerator::RequestGenerator() : reqTimeMin(4), reqTimeMax(100), reqProb(5) {
+RequestGenerator::RequestGenerator() : reqTimeMin(DEFAULT_MIN_TIME), reqTimeMax(DEFAULT_MAX_TIME), reqProb(5) {
     srand(time(0));
 }
 
-RequestGenerator::RequestGenerator(int prob) : reqTimeMin(4), reqTimeMax(100), reqProb(prob) {
+RequestGenerator::RequestGenerator(int prob) : reqTimeMin(DEFAULT_MIN_TIME), reqTimeMax(DEFAULT_MAX_TIME), reqProb(prob) {
     srand(time(0));
 }
 

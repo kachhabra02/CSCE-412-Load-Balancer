@@ -7,7 +7,8 @@
 #include <time.h>
 using std::string, std::to_string, std::vector;
 
-#define DEFAULT_MIN_TIME
+#define DEFAULT_MIN_TIME 4
+#define DEFAULT_MAX_TIME 4
 
 class RequestGenerator {
 private:

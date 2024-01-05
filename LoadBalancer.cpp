@@ -100,7 +100,7 @@ void LoadBalancer::tickClock() {
     }
 
     if (monitor) {
-        // TODO: Log number of servers and requests
+        monitor->updateServerAndRequestData(clock, servers.size(), req_q.size());
     }
 
     for (int i = 0; i < servers.size(); ++i) {
@@ -116,7 +116,7 @@ void LoadBalancer::tickClock() {
                 }
 
                 if (monitor) {
-                    // TODO: Update Completed Requests
+                    monitor->requestCompleted();
                 }
 
                 delete req;
@@ -126,7 +126,7 @@ void LoadBalancer::tickClock() {
             }
         }
 
-        else if (!req_q.empty() && readyForNewReq) {
+        if (!req_q.empty() && readyForNewReq) {
             Request* req = req_q.pop();
             servers[i].receiveRequest(req);
 
@@ -135,7 +135,7 @@ void LoadBalancer::tickClock() {
             }
 
             if (monitor) {
-                // TODO: Update Recieved Requests By Server
+                monitor->requestDelegated();
             }
         }
     }
@@ -151,7 +151,7 @@ void LoadBalancer::receiveRequests(vector<Request*> reqs) {
             }
 
             if (monitor) {
-                // TODO: Update Blocked Requests
+                monitor->requestBlocked();
             }
             
             continue;
@@ -164,11 +164,22 @@ void LoadBalancer::receiveRequests(vector<Request*> reqs) {
         }
 
         if (monitor) {
-            // TODO: Update Recieved Requests
+            monitor->requestReceived();
         }
     }
 }
 
 int LoadBalancer::numRequestsQueued() {
     return req_q.size();
+}
+
+int LoadBalancer::numServersFull() {
+    int count = 0;
+    for (WebServer server : servers) {
+        if (server.hasRequest()) {
+            ++count;
+        }
+    }
+
+    return count;
 }
