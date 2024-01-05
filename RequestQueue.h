@@ -14,6 +14,7 @@ public:
     ~RequestQueue();
     
     size_t size();
+    bool empty();
     void push(Request* req);
     Request* pop();
     Request* front();
